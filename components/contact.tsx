@@ -8,27 +8,78 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, CheckCircle2, AlertCircle } from "lucide-react"
 
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    practice: "",
+    subject: "",
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null
+    message: string
+  }>({ type: null, message: "" })
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-    alert("Thank you for your enquiry! We will get back to you soon.")
-    setFormData({ name: "", email: "", phone: "", practice: "", message: "" })
+    setIsSubmitting(true)
+    setSubmitStatus({ type: null, message: "" })
+
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
+      const response = await fetch(`${apiUrl}/api/enquiries/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message:
+            "Thank you for your enquiry! We've sent you a confirmation email and will get back to you within 24-48 hours.",
+        })
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
+      } else {
+        // Handle validation errors from Django
+        const errorMessage =
+          typeof data === "object"
+            ? Object.entries(data)
+                .map(([field, errors]) => `${field}: ${Array.isArray(errors) ? errors.join(", ") : errors}`)
+                .join("; ")
+            : "Failed to submit enquiry. Please try again."
+
+        setSubmitStatus({
+          type: "error",
+          message: errorMessage,
+        })
+      }
+    } catch (error) {
+      console.error("[v0] Error submitting enquiry:", error)
+      setSubmitStatus({
+        type: "error",
+        message: "Unable to connect to the server. Please check your connection and try again.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+    // Clear status when user starts typing again
+    if (submitStatus.type) {
+      setSubmitStatus({ type: null, message: "" })
+    }
   }
 
   return (
@@ -49,6 +100,23 @@ export function Contact() {
         <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           <div className="lg:col-span-2">
             <Card className="p-8 bg-card/50 backdrop-blur border-border/50">
+              {submitStatus.type && (
+                <div
+                  className={`mb-6 p-4 rounded-lg flex items-start gap-3 ${
+                    submitStatus.type === "success"
+                      ? "bg-green-500/10 border border-green-500/20 text-green-700 dark:text-green-400"
+                      : "bg-red-500/10 border border-red-500/20 text-red-700 dark:text-red-400"
+                  }`}
+                >
+                  {submitStatus.type === "success" ? (
+                    <CheckCircle2 className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                  ) : (
+                    <AlertCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                  )}
+                  <p className="text-sm leading-relaxed">{submitStatus.message}</p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -59,6 +127,7 @@ export function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      disabled={isSubmitting}
                       className="bg-background/50"
                     />
                   </div>
@@ -71,6 +140,7 @@ export function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      disabled={isSubmitting}
                       className="bg-background/50"
                     />
                   </div>
@@ -85,16 +155,20 @@ export function Contact() {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                       className="bg-background/50"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="practice">Practice/Organization</Label>
+                    <Label htmlFor="subject">Subject *</Label>
                     <Input
-                      id="practice"
-                      name="practice"
-                      value={formData.practice}
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
                       onChange={handleChange}
+                      required
+                      disabled={isSubmitting}
+                      placeholder="e.g., Website Development Enquiry"
                       className="bg-background/50"
                     />
                   </div>
@@ -108,13 +182,19 @@ export function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     rows={6}
                     className="bg-background/50 resize-none"
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-lg py-6">
-                  Send Enquiry
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary hover:bg-primary/90 text-lg py-6"
+                >
+                  {isSubmitting ? "Sending..." : "Send Enquiry"}
                 </Button>
               </form>
             </Card>
