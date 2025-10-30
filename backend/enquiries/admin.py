@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Enquiry
 
 
-@admin.ModelAdmin
+#@admin.ModelAdmin
 class EnquiryAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'subject', 'status', 'created_at', 'admin_notified', 'auto_response_sent']
     list_filter = ['status', 'created_at', 'admin_notified', 'auto_response_sent']
