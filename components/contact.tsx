@@ -32,6 +32,9 @@ export function Contact() {
 
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
+
+      console.log("[v0] Submitting to:", `${apiUrl}/api/enquiries/`)
+
       const response = await fetch(`${apiUrl}/api/enquiries/`, {
         method: "POST",
         headers: {
@@ -39,6 +42,22 @@ export function Contact() {
         },
         body: JSON.stringify(formData),
       })
+
+      const contentType = response.headers.get("content-type")
+      console.log("[v0] Response status:", response.status)
+      console.log("[v0] Response content-type:", contentType)
+
+      // If response is not JSON, it's likely an error page (HTML)
+      if (!contentType || !contentType.includes("application/json")) {
+        const textResponse = await response.text()
+        console.error("[v0] Non-JSON response received:", textResponse.substring(0, 200))
+
+        setSubmitStatus({
+          type: "error",
+          message: `Unable to connect to the Django backend at ${apiUrl}. Please ensure the Django server is running on port 8000 and CORS is configured correctly.`,
+        })
+        return
+      }
 
       const data = await response.json()
 
@@ -65,9 +84,11 @@ export function Contact() {
       }
     } catch (error) {
       console.error("[v0] Error submitting enquiry:", error)
+
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
       setSubmitStatus({
         type: "error",
-        message: "Unable to connect to the server. Please check your connection and try again.",
+        message: `Cannot connect to Django backend at ${apiUrl}. Please ensure: 1) Django server is running (python manage.py runserver), 2) NEXT_PUBLIC_API_URL is set correctly in .env.local, 3) CORS is configured in Django settings.`,
       })
     } finally {
       setIsSubmitting(false)
