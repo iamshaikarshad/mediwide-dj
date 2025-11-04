@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mediwide-backend
+    env: python
+    region: oregon
+    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
+    startCommand: gunicorn mediwide.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: mediwide.production_settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    autoDeploy: true
+
+databases:
+  - name: mediwide-db
+    databaseName: mediwide
+    user: mediwide
+    region: oregon
