@@ -243,7 +243,7 @@ export function Contact() {
               //  Medical District
                // <br />
                // Your City, ST 12345
-              </p>
+              //</p>
             </Card>
           </div>
         </div>
