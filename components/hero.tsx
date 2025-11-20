@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from 'lucide-react'
 import Image from "next/image"
 
 export function Hero() {
@@ -34,8 +34,8 @@ export function Hero() {
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
       >
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/30 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -47,10 +47,10 @@ export function Hero() {
             }}
           >
             <Image
-              src="/mediwide-logo.jpg"
+              src="/mediwide-icon.png"
               alt="MediWide Logo"
-              width={120}
-              height={120}
+              width={128}
+              height={128}
               className="w-24 h-24 md:w-32 md:h-32"
             />
           </div>
@@ -83,14 +83,14 @@ export function Hero() {
               transform: `translateY(${scrollY * 0.1}px)`,
             }}
           >
-            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90" onClick={scrollToContact}>
+            <Button size="lg" className="text-lg px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90" onClick={scrollToContact}>
               Get Started
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 border-2 bg-transparent"
+              className="text-lg px-8 py-6 border-2 bg-transparent hover:bg-primary/10 hover:border-primary"
               onClick={scrollToServices}
             >
               View Services
@@ -101,8 +101,8 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-muted-foreground/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-muted-foreground/50 rounded-full" />
+        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
+          <div className="w-1.5 h-3 bg-primary/50 rounded-full" />
         </div>
       </div>
     </section>

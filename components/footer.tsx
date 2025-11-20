@@ -8,7 +8,7 @@ export function Footer() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <Image src="/mediwide-logo.jpg" alt="MediWide Logo" width={32} height={32} className="w-8 h-8" />
+                <Image src="/mediwide-logo.png" alt="MediWide Logo" width={32} height={32} className="w-8 h-8" />
                 <h3 className="text-2xl font-bold">MediWide</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
@@ -18,22 +18,22 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Services</h4>
+              <h4 className="font-semibold mb-4 text-primary">Services</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>Medical Websites</li>
-                <li>Patient Management</li>
-                <li>Mobile Applications</li>
-                <li>Custom Development</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Medical Websites</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Patient Management</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Mobile Applications</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Custom Development</li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4 text-primary">Company</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>About Us</li>
-                <li>Portfolio</li>
-                <li>Contact</li>
-                <li>Privacy Policy</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">About Us</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Portfolio</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Contact</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Privacy Policy</li>
               </ul>
             </div>
           </div>

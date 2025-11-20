@@ -231,18 +231,18 @@ export function Contact() {
             <Card className="p-6 bg-card/50 backdrop-blur border-border/50">
               <Phone className="h-8 w-8 text-primary mb-4" />
               <h3 className="text-lg font-semibold mb-2">Call Us</h3>
-              <p className="text-muted-foreground">+1 (555) 123-4567</p>
+              <p className="text-muted-foreground">+44 740 427 6830</p>
             </Card>
 
             <Card className="p-6 bg-card/50 backdrop-blur border-border/50">
               <MapPin className="h-8 w-8 text-primary mb-4" />
               <h3 className="text-lg font-semibold mb-2">Visit Us</h3>
-              <p className="text-muted-foreground">
-                123 Healthcare Blvd
-                <br />
-                Medical District
-                <br />
-                Your City, ST 12345
+              //<p className="text-muted-foreground">
+              //  123 Healthcare Blvd
+              //  <br />
+              //  Medical District
+               // <br />
+               // Your City, ST 12345
               </p>
             </Card>
           </div>
