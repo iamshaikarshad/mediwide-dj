@@ -8,7 +8,7 @@ export function Footer() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <Image src="/mediwide-logo.jpg" alt="MediWide Logo" width={32} height={32} className="w-8 h-8" />
+                <Image src="/mediwide-logo.png" alt="MediWide Logo" width={32} height={32} className="w-8 h-8" />
                 <h3 className="text-2xl font-bold">MediWide</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">

@@ -22,7 +22,7 @@ export function About() {
   }, [])
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section id="about" className="py-32 relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-10"
         style={{
