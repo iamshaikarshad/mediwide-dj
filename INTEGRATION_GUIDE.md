@@ -115,20 +115,6 @@ EMAIL_HOST_PASSWORD=your-sendgrid-api-key
 
 ## API Endpoints
 
-### Submit Enquiry
-\`\`\`
-POST http://localhost:8000/api/enquiries/
-Content-Type: application/json
-
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "phone": "+1234567890",
-  "subject": "Website Development",
-  "message": "I'm interested in your services..."
-}
-\`\`\`
-
 ### List Enquiries (Admin)
 \`\`\`
 GET http://localhost:8000/api/enquiries/list/
