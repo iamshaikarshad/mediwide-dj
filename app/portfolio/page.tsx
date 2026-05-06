@@ -101,7 +101,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           project.image === "gradient-blue-to-purple" ? "from-neon-blue/30 to-neon-purple/30" :
           project.image === "gradient-magenta-to-cyan" ? "from-neon-purple/30 to-neon-cyan/30" :
           "from-neon-cyan/30 via-neon-blue/30 to-neon-purple/30"
-        } rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur` />}
+        } rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur`} />
 
         <div className="relative glass rounded-3xl overflow-hidden">
           {/* Content grid */}
