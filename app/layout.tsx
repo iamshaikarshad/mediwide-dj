@@ -1,6 +1,9 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Sora, Plus_Jakarta_Sans } from "next/font/google"
+import { LenisProvider } from "@/components/lenis-provider"
+import { Analytics } from "@vercel/analytics/react"
+import "./globals.css"
 
 const sora = Sora({ 
   subsets: ["latin"],
