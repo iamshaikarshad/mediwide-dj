@@ -6,28 +6,28 @@ import { useCounter } from "@/hooks/use-animations"
 
 const stats = [
   {
-    value: 10000,
+    value: 150,
     suffix: "+",
-    label: "Successful Placements",
-    description: "Healthcare professionals placed in roles",
+    label: "AI Systems Deployed",
+    description: "Live in healthcare environments worldwide",
   },
   {
-    value: 500,
-    suffix: "+",
-    label: "Healthcare Partners",
-    description: "Hospitals, clinics, and care facilities",
-  },
-  {
-    value: 98,
+    value: 40,
     suffix: "%",
-    label: "Client Satisfaction",
-    description: "Based on post-placement surveys",
+    label: "Admin Time Saved",
+    description: "Average reduction across client practices",
   },
   {
-    value: 48,
-    suffix: "hr",
-    label: "Average Fill Time",
-    description: "For urgent staffing requests",
+    value: 99,
+    suffix: "%",
+    label: "Uptime Guaranteed",
+    description: "Across all production deployments",
+  },
+  {
+    value: 3,
+    suffix: "wk",
+    label: "Average Time to Launch",
+    description: "From kickoff to live deployment",
   },
 ]
 

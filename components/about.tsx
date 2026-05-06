@@ -16,32 +16,32 @@ import { MagneticButton } from "@/components/ui/magnetic-button"
 const features = [
   {
     icon: Zap,
-    title: "Fast Placements",
-    description: "Quick turnaround times with our extensive candidate network",
+    title: "Rapid AI Deployment",
+    description: "From scoping to live production in weeks, not months",
   },
   {
     icon: Shield,
-    title: "Fully Compliant",
-    description: "Rigorous vetting and compliance-first approach",
+    title: "Healthcare Compliant",
+    description: "HIPAA-ready systems built with data security by default",
   },
   {
     icon: Clock,
-    title: "24/7 Support",
-    description: "Round-the-clock assistance for urgent staffing needs",
+    title: "Ongoing Optimisation",
+    description: "Continuous model tuning and performance monitoring post-launch",
   },
   {
     icon: MapPin,
-    title: "Nationwide Coverage",
-    description: "Supporting healthcare facilities across the country",
+    title: "End-to-End Delivery",
+    description: "Strategy, design, engineering, and integration under one roof",
   },
 ]
 
 const timeline = [
-  { year: "2009", event: "Founded with a mission to transform healthcare staffing" },
-  { year: "2014", event: "Expanded to nationwide coverage across all regions" },
-  { year: "2018", event: "Launched international recruitment division" },
-  { year: "2022", event: "Achieved 10,000+ successful placements milestone" },
-  { year: "2024", event: "Introducing AI-powered candidate matching" },
+  { year: "2016", event: "Founded with a focus on healthcare digital transformation" },
+  { year: "2018", event: "Delivered first custom EHR integration for NHS-aligned practices" },
+  { year: "2020", event: "Launched AI-powered patient triage and booking automation" },
+  { year: "2022", event: "Expanded into enterprise hospital software development" },
+  { year: "2024", event: "Deploying large language model solutions across clinical workflows" },
 ]
 
 export function About() {
@@ -91,8 +91,8 @@ export function About() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl sm:text-5xl font-bold mb-6 text-balance"
             >
-              Building the Future of{" "}
-              <span className="gradient-text">Healthcare Staffing</span>
+              Precision AI Delivery for{" "}
+              <span className="gradient-text">Healthcare Systems</span>
             </motion.h2>
 
             <motion.p
@@ -101,9 +101,9 @@ export function About() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-muted-foreground mb-8 leading-relaxed"
             >
-              For over 15 years, Mediwide has been at the forefront of healthcare recruitment. 
-              We combine deep industry expertise with innovative technology to deliver 
-              exceptional staffing solutions that make a real difference.
+              We specialise in designing and deploying AI systems purpose-built for healthcare. 
+              From intelligent automation to clinical decision support, we turn complex 
+              technology into reliable, compliant, real-world solutions.
             </motion.p>
 
             {/* Features grid */}
@@ -188,7 +188,7 @@ export function About() {
               transition={{ duration: 0.5, delay: 1, type: "spring" }}
               className="absolute -top-6 -right-6 px-4 py-2 bg-primary text-primary-foreground rounded-xl font-bold shadow-lg glow-cyan"
             >
-              15+ Years
+              AI-Native
             </motion.div>
           </motion.div>
         </div>
