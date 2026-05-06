@@ -7,6 +7,7 @@ import { Stats } from "@/components/stats"
 import { Testimonials } from "@/components/testimonials"
 import { CTABanner } from "@/components/cta-banner"
 import { Footer } from "@/components/footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Testimonials />
       <CTABanner />
       <Footer />
+      <ScrollToTop />
     </main>
   )
 }
