@@ -12,11 +12,6 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
 })
 
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: "--font-inter",
-})
-
 export const metadata: Metadata = {
   title: "Mediwide | Digital Solutions for Medical Excellence",
   description: "Premium digital solutions for healthcare professionals. Websites, software, AI systems, and automation for clinics, hospitals, and medical practices. Empowering the future of healthcare technology.",
