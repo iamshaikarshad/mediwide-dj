@@ -1,15 +1,48 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import type { Metadata, Viewport } from "next"
+import { Space_Grotesk, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { LenisProvider } from "@/components/providers/lenis-provider"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+})
+
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
 
 export const metadata: Metadata = {
-  title: "MediWide - Web Solutions for Medical Professionals",
-  description: "Professional websites and software products for doctors, clinics, and healthcare providers",
-  generator: "v0.app",
+  title: "Mediwide | Transforming Healthcare Staffing",
+  description: "Premium healthcare recruitment and staffing solutions. Fast placements, qualified professionals, nationwide coverage. Build the future of healthcare staffing with Mediwide.",
+  keywords: ["healthcare staffing", "medical recruitment", "healthcare recruitment", "nursing jobs", "medical professionals", "temporary staffing", "permanent staffing"],
+  authors: [{ name: "Mediwide" }],
+  openGraph: {
+    title: "Mediwide | Transforming Healthcare Staffing",
+    description: "Premium healthcare recruitment and staffing solutions. Fast placements, qualified professionals, nationwide coverage.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Mediwide",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mediwide | Transforming Healthcare Staffing",
+    description: "Premium healthcare recruitment and staffing solutions. Fast placements, qualified professionals, nationwide coverage.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a14",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -18,9 +51,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} font-sans antialiased`}>
-        {children}
+    <html lang="en" className={`dark bg-background ${spaceGrotesk.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased">
+        <LenisProvider>
+          {children}
+        </LenisProvider>
         <Analytics />
       </body>
     </html>
