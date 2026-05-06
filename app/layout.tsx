@@ -1,13 +1,15 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Space_Grotesk, Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import { LenisProvider } from "@/components/providers/lenis-provider"
-import "./globals.css"
+import { Sora, Plus_Jakarta_Sans } from "next/font/google"
 
-const spaceGrotesk = Space_Grotesk({ 
+const sora = Sora({ 
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-sora",
+})
+
+const plusJakartaSans = Plus_Jakarta_Sans({ 
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
 })
 
 const inter = Inter({ 
@@ -51,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`dark bg-background ${spaceGrotesk.variable} ${inter.variable}`}>
+    <html lang="en" className={`dark bg-background ${sora.variable} ${plusJakartaSans.variable}`}>
       <body className="font-sans antialiased">
         <LenisProvider>
           {children}
