@@ -3,58 +3,60 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { 
-  Users, 
-  Clock, 
   Globe, 
-  ShieldCheck, 
-  Briefcase, 
-  HeartPulse,
-  ArrowUpRight 
+  Zap, 
+  Brain, 
+  Calendar, 
+  Palette, 
+  Search,
+  ArrowUpRight,
+  Smartphone,
+  BarChart3
 } from "lucide-react"
 import Link from "next/link"
 import { AnimatedGradientBorder } from "@/components/ui/background-effects"
 
 const services = [
   {
-    icon: HeartPulse,
-    title: "Healthcare Recruitment",
-    description: "Specialized recruitment for nurses, doctors, allied health professionals, and support staff across all healthcare settings.",
-    href: "/services/healthcare-recruitment",
+    icon: Palette,
+    title: "Medical Website Design",
+    description: "Custom-built, conversion-optimized websites for healthcare practices. Responsive, fast, and designed to attract and retain patients.",
+    href: "/services/web-design",
     color: "from-neon-cyan to-neon-blue",
   },
   {
-    icon: Clock,
-    title: "Temporary Staffing",
-    description: "Flexible staffing solutions to cover short-term needs, seasonal demands, and unexpected vacancies with qualified professionals.",
-    href: "/services/temporary-staffing",
+    icon: Zap,
+    title: "Healthcare Software Development",
+    description: "Bespoke software solutions for clinics, hospitals, and medical practices. EHR systems, practice management, and custom applications.",
+    href: "/services/software",
     color: "from-neon-blue to-neon-purple",
   },
   {
-    icon: Briefcase,
-    title: "Permanent Staffing",
-    description: "Find your next career move or build your dream team with our permanent placement services backed by industry expertise.",
-    href: "/services/permanent-staffing",
+    icon: Brain,
+    title: "AI & Automation",
+    description: "Intelligent automation for healthcare workflows. AI receptionists, appointment scheduling, smart patient workflows, and more.",
+    href: "/services/ai-automation",
     color: "from-neon-purple to-neon-cyan",
   },
   {
-    icon: Globe,
-    title: "International Recruitment",
-    description: "Access global talent pools with our international recruitment services, including visa sponsorship and relocation support.",
-    href: "/services/international-recruitment",
+    icon: Calendar,
+    title: "Patient Booking Systems",
+    description: "Streamlined appointment scheduling with automated reminders, online payments, and patient management integration.",
+    href: "/services/booking-systems",
     color: "from-neon-cyan to-neon-purple",
   },
   {
-    icon: ShieldCheck,
-    title: "Compliance & Vetting",
-    description: "Comprehensive compliance services including DBS checks, right to work verification, and professional registration validation.",
-    href: "/services/compliance",
+    icon: Smartphone,
+    title: "Medical Mobile Apps",
+    description: "Native and cross-platform mobile applications for telemedicine, patient monitoring, and practice management.",
+    href: "/services/mobile-apps",
     color: "from-neon-purple to-neon-blue",
   },
   {
-    icon: Users,
-    title: "Workforce Solutions",
-    description: "Strategic workforce planning and managed service solutions tailored to your organization&apos;s unique requirements.",
-    href: "/services/workforce-solutions",
+    icon: BarChart3,
+    title: "Healthcare Analytics & SEO",
+    description: "Data-driven insights and SEO optimization to boost patient acquisition and improve online visibility for medical practices.",
+    href: "/services/analytics-seo",
     color: "from-neon-blue to-neon-cyan",
   },
 ]
@@ -156,8 +158,8 @@ export function Services() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-balance"
           >
-            Comprehensive Healthcare{" "}
-            <span className="gradient-text">Staffing Solutions</span>
+            Futuristic Healthcare{" "}
+            <span className="gradient-text">Technology Solutions</span>
           </motion.h2>
           
           <motion.p
@@ -166,8 +168,8 @@ export function Services() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-muted-foreground leading-relaxed"
           >
-            From temporary cover to permanent placements, we provide end-to-end recruitment 
-            solutions designed specifically for the healthcare industry.
+            From custom websites to AI-powered automation, we deliver cutting-edge digital 
+            solutions designed specifically for healthcare professionals and medical institutions.
           </motion.p>
         </div>
 

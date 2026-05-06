@@ -10,9 +10,9 @@ import { GridBackground, FloatingOrbs, ParticleField } from "@/components/ui/bac
 import { useCounter } from "@/hooks/use-animations"
 
 const stats = [
-  { icon: Users, value: 10000, suffix: "+", label: "Placements" },
-  { icon: Building, value: 500, suffix: "+", label: "Partners" },
-  { icon: Award, value: 15, suffix: "+", label: "Years" },
+  { icon: Users, value: 150, suffix: "+", label: "Clinics Served" },
+  { icon: Building, value: 50, suffix: "+", label: "Hospitals Partner" },
+  { icon: Award, value: 8, suffix: "+", label: "Years Experience" },
   { icon: Clock, value: 24, suffix: "/7", label: "Support" },
 ]
 
@@ -80,7 +80,7 @@ export function Hero() {
           >
             <div className="flex items-center gap-2 px-4 py-2 glass rounded-full border border-primary/20">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm text-muted-foreground">Trusted by 500+ Healthcare Organizations</span>
+              <span className="text-sm text-muted-foreground">Trusted by healthcare professionals worldwide</span>
             </div>
           </motion.div>
 
@@ -92,8 +92,8 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
             >
-              <span className="block text-foreground">Transforming</span>
-              <span className="block gradient-text">Healthcare Staffing</span>
+              <span className="block text-foreground">Digital Solutions for</span>
+              <span className="block gradient-text">Medical Excellence</span>
             </motion.h1>
 
             <motion.p
@@ -102,8 +102,8 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
-              Connecting exceptional healthcare professionals with leading medical institutions. 
-              Fast placements, qualified candidates, nationwide coverage.
+              Empowering healthcare professionals with cutting-edge websites, AI systems, 
+              and software solutions. Transform your practice with futuristic technology.
             </motion.p>
           </div>
 
@@ -116,21 +116,21 @@ export function Hero() {
           >
             <MagneticButton strength={0.15}>
               <Link
-                href="/employers"
+                href="/contact"
                 className="group flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg hover:bg-primary/90 transition-all glow-cyan"
               >
-                Find Staff
+                Book a Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </MagneticButton>
             
             <MagneticButton strength={0.15}>
               <Link
-                href="/jobs"
+                href="/portfolio"
                 className="group flex items-center gap-2 px-8 py-4 border border-border/50 rounded-full font-medium text-lg hover:bg-secondary/50 transition-all"
               >
                 <Play className="w-5 h-5" />
-                Find Jobs
+                View Our Work
               </Link>
             </MagneticButton>
           </motion.div>

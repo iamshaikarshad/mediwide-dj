@@ -16,24 +16,24 @@ import {
 
 const footerLinks = {
   services: [
-    { name: "Healthcare Recruitment", href: "/services/healthcare-recruitment" },
-    { name: "Temporary Staffing", href: "/services/temporary-staffing" },
-    { name: "Permanent Staffing", href: "/services/permanent-staffing" },
-    { name: "International Recruitment", href: "/services/international-recruitment" },
-    { name: "Compliance & Vetting", href: "/services/compliance" },
+    { name: "Medical Web Design", href: "/services/web-design" },
+    { name: "Healthcare Software", href: "/services/software" },
+    { name: "AI & Automation", href: "/services/ai-automation" },
+    { name: "Patient Booking Systems", href: "/services/booking-systems" },
+    { name: "Telehealth Solutions", href: "/services/telehealth" },
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Our Team", href: "/about#team" },
-    { name: "Careers", href: "/careers" },
-    { name: "News & Insights", href: "/blog" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Resources", href: "/resources" },
     { name: "Contact", href: "/contact" },
+    { name: "Careers", href: "/careers" },
   ],
   resources: [
-    { name: "For Employers", href: "/employers" },
-    { name: "For Candidates", href: "/candidates" },
-    { name: "Job Search", href: "/jobs" },
-    { name: "FAQs", href: "/faqs" },
+    { name: "AI Solutions", href: "/ai-automation" },
+    { name: "Case Studies", href: "/portfolio" },
+    { name: "Healthcare Blog", href: "/resources" },
+    { name: "Documentation", href: "/docs" },
     { name: "Privacy Policy", href: "/privacy" },
   ],
 }
@@ -80,8 +80,8 @@ export function Footer() {
             </Link>
             
             <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed">
-              Transforming healthcare staffing with innovative solutions. 
-              Connecting exceptional professionals with leading medical institutions since 2009.
+              Empowering healthcare professionals with cutting-edge digital solutions. 
+              Custom websites, AI systems, and software for medical practices, clinics, and hospitals.
             </p>
 
             {/* Contact info */}

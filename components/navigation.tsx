@@ -12,16 +12,16 @@ const navLinks = [
     name: "Services", 
     href: "#services",
     dropdown: [
-      { name: "Healthcare Recruitment", href: "/services/healthcare-recruitment" },
-      { name: "Temporary Staffing", href: "/services/temporary-staffing" },
-      { name: "Permanent Staffing", href: "/services/permanent-staffing" },
-      { name: "International Recruitment", href: "/services/international-recruitment" },
+      { name: "Medical Web Design", href: "/services/web-design" },
+      { name: "Healthcare Software", href: "/services/software" },
+      { name: "AI Automation", href: "/services/ai-automation" },
+      { name: "Patient Booking Systems", href: "/services/booking-systems" },
+      { name: "Telehealth Solutions", href: "/services/telehealth" },
     ]
   },
+  { name: "Portfolio", href: "/portfolio" },
   { name: "About", href: "#about" },
-  { name: "Jobs", href: "/jobs" },
-  { name: "Employers", href: "/employers" },
-  { name: "Candidates", href: "/candidates" },
+  { name: "Resources", href: "/resources" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -151,18 +151,18 @@ export function Navigation() {
             <div className="hidden lg:flex items-center gap-3">
               <MagneticButton strength={0.2}>
                 <Link
-                  href="/jobs"
+                  href="/portfolio"
                   className="px-5 py-2.5 text-sm font-medium text-foreground border border-border/50 rounded-full hover:bg-secondary/50 transition-colors"
                 >
-                  Find Jobs
+                  View Work
                 </Link>
               </MagneticButton>
               <MagneticButton strength={0.2}>
                 <Link
-                  href="/employers"
+                  href="/contact"
                   className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors glow-cyan"
                 >
-                  Find Staff
+                  Get Started
                 </Link>
               </MagneticButton>
             </div>
@@ -217,18 +217,18 @@ export function Navigation() {
                   ))}
                   <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border/50">
                     <Link
-                      href="/jobs"
+                      href="/portfolio"
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="px-4 py-3 text-center text-lg font-medium text-foreground border border-border/50 rounded-xl hover:bg-secondary/50 transition-colors"
                     >
-                      Find Jobs
+                      View Work
                     </Link>
                     <Link
-                      href="/employers"
+                      href="/contact"
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="px-4 py-3 text-center text-lg font-medium bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors"
                     >
-                      Find Staff
+                      Get Started
                     </Link>
                   </div>
                 </div>

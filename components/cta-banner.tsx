@@ -59,8 +59,8 @@ export function CTABanner() {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance"
           >
-            Ready to Build the Future of{" "}
-            <span className="gradient-text">Healthcare Staffing</span>?
+            Ready to Transform Your{" "}
+            <span className="gradient-text">Healthcare Practice</span>?
           </motion.h2>
 
           <motion.p
@@ -69,8 +69,8 @@ export function CTABanner() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Whether you&apos;re looking for your next career move or seeking qualified healthcare professionals, 
-            we&apos;re here to help you succeed.
+            Let&apos;s discuss how our cutting-edge digital solutions can help you 
+            streamline operations, improve patient experiences, and grow your practice.
           </motion.p>
 
           <motion.div
@@ -81,20 +81,20 @@ export function CTABanner() {
           >
             <MagneticButton strength={0.15}>
               <Link
-                href="/employers"
+                href="/contact"
                 className="group flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg hover:bg-primary/90 transition-all glow-cyan"
               >
-                I&apos;m Hiring
+                Book a Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </MagneticButton>
             
             <MagneticButton strength={0.15}>
               <Link
-                href="/jobs"
+                href="/portfolio"
                 className="group flex items-center gap-2 px-8 py-4 bg-background/50 border border-border/50 backdrop-blur-sm rounded-full font-medium text-lg hover:bg-secondary/50 transition-all"
               >
-                I&apos;m Looking for Work
+                View Our Work
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </MagneticButton>
@@ -109,15 +109,15 @@ export function CTABanner() {
           >
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-500" />
-              <span>No placement fees for candidates</span>
+              <span>HIPAA compliant solutions</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-500" />
-              <span>GDPR compliant</span>
+              <span>8+ years healthcare expertise</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-500" />
-              <span>24/7 support available</span>
+              <span>24/7 technical support</span>
             </div>
           </motion.div>
         </div>

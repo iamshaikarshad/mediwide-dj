@@ -155,8 +155,8 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
             >
-              Whether you&apos;re looking for healthcare staff or your next career move, 
-              our team is here to help you succeed.
+              Have a project in mind? Let&apos;s discuss how we can transform your healthcare practice 
+              with cutting-edge digital solutions and AI-powered automation.
             </motion.p>
           </div>
         </div>
@@ -226,31 +226,31 @@ export default function ContactPage() {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Type selector */}
-                <div className="flex gap-4 p-1 bg-secondary/50 rounded-xl w-fit">
-                  <button
-                    type="button"
-                    onClick={() => setFormData({ ...formData, type: "employer" })}
-                    className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      formData.type === "employer"
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    I&apos;m an Employer
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFormData({ ...formData, type: "candidate" })}
-                    className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      formData.type === "candidate"
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    I&apos;m a Candidate
-                  </button>
-                </div>
+              {/* Type selector */}
+              <div className="flex gap-4 p-1 bg-secondary/50 rounded-xl w-fit">
+                <button
+                  type="button"
+                  onClick={() => setFormData({ ...formData, type: "employer" })}
+                  className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    formData.type === "employer"
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  Healthcare Practice
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFormData({ ...formData, type: "candidate" })}
+                  className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    formData.type === "candidate"
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  General Inquiry
+                </button>
+              </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
@@ -302,7 +302,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium mb-2">
-                      {formData.type === "employer" ? "Company Name" : "Current Position"}
+                      {formData.type === "employer" ? "Practice/Organization Name" : "Your Name"}
                     </label>
                     <input
                       type="text"
@@ -328,7 +328,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting}
-                    placeholder={formData.type === "employer" ? "e.g., Staffing Enquiry" : "e.g., Job Application"}
+                    placeholder={formData.type === "employer" ? "e.g., Project Inquiry" : "e.g., General Question"}
                     className="w-full px-4 py-3 bg-background/50 border border-border/50 rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors disabled:opacity-50"
                   />
                 </div>

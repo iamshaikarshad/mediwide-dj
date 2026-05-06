@@ -16,21 +16,21 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Mediwide | Transforming Healthcare Staffing",
-  description: "Premium healthcare recruitment and staffing solutions. Fast placements, qualified professionals, nationwide coverage. Build the future of healthcare staffing with Mediwide.",
-  keywords: ["healthcare staffing", "medical recruitment", "healthcare recruitment", "nursing jobs", "medical professionals", "temporary staffing", "permanent staffing"],
+  title: "Mediwide | Digital Solutions for Medical Excellence",
+  description: "Premium digital solutions for healthcare professionals. Websites, software, AI systems, and automation for clinics, hospitals, and medical practices. Empowering the future of healthcare technology.",
+  keywords: ["healthcare web design", "medical software development", "healthcare AI", "clinic software", "hospital IT solutions", "medical practice software", "healthcare automation", "telehealth solutions"],
   authors: [{ name: "Mediwide" }],
   openGraph: {
-    title: "Mediwide | Transforming Healthcare Staffing",
-    description: "Premium healthcare recruitment and staffing solutions. Fast placements, qualified professionals, nationwide coverage.",
+    title: "Mediwide | Digital Solutions for Medical Excellence",
+    description: "Premium digital solutions for healthcare professionals. Websites, software, AI systems, and automation for clinics, hospitals, and medical practices.",
     type: "website",
     locale: "en_US",
     siteName: "Mediwide",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mediwide | Transforming Healthcare Staffing",
-    description: "Premium healthcare recruitment and staffing solutions. Fast placements, qualified professionals, nationwide coverage.",
+    title: "Mediwide | Digital Solutions for Medical Excellence",
+    description: "Premium digital solutions for healthcare professionals. Websites, software, AI systems, and automation for clinics, hospitals, and medical practices.",
   },
   robots: {
     index: true,
