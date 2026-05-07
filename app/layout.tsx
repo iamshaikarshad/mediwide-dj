@@ -1,15 +1,48 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
+import type { Metadata, Viewport } from "next"
+import { Sora, Plus_Jakarta_Sans } from "next/font/google"
+import { LenisProvider } from "@/components/providers/lenis-provider"
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const sora = Sora({ 
+  subsets: ["latin"],
+  variable: "--font-sora",
+})
+
+const plusJakartaSans = Plus_Jakarta_Sans({ 
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+})
 
 export const metadata: Metadata = {
-  title: "MediWide - Web Solutions for Medical Professionals",
-  description: "Professional websites and software products for doctors, clinics, and healthcare providers",
-  generator: "v0.app",
+  title: "Mediwide | Digital Solutions for Medical Excellence",
+  description: "Premium digital solutions for healthcare professionals. Websites, software, AI systems, and automation for clinics, hospitals, and medical practices. Empowering the future of healthcare technology.",
+  keywords: ["healthcare web design", "medical software development", "healthcare AI", "clinic software", "hospital IT solutions", "medical practice software", "healthcare automation", "telehealth solutions"],
+  authors: [{ name: "Mediwide" }],
+  openGraph: {
+    title: "Mediwide | Digital Solutions for Medical Excellence",
+    description: "Premium digital solutions for healthcare professionals. Websites, software, AI systems, and automation for clinics, hospitals, and medical practices.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Mediwide",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mediwide | Digital Solutions for Medical Excellence",
+    description: "Premium digital solutions for healthcare professionals. Websites, software, AI systems, and automation for clinics, hospitals, and medical practices.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a14",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -18,9 +51,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} font-sans antialiased`}>
-        {children}
+    <html lang="en" className={`dark bg-background ${sora.variable} ${plusJakartaSans.variable}`}>
+      <body className="font-sans antialiased">
+        <LenisProvider>
+          {children}
+        </LenisProvider>
         <Analytics />
       </body>
     </html>

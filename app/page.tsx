@@ -1,21 +1,27 @@
 import { Navigation } from "@/components/navigation"
 import { Hero } from "@/components/hero"
+import { TrustedBy } from "@/components/trusted-by"
 import { Services } from "@/components/services"
 import { About } from "@/components/about"
-import { Portfolio } from "@/components/portfolio"
-import { Contact } from "@/components/contact"
+import { Stats } from "@/components/stats"
+import { Testimonials } from "@/components/testimonials"
+import { CTABanner } from "@/components/cta-banner"
 import { Footer } from "@/components/footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
       <Navigation />
       <Hero />
+      <TrustedBy />
       <Services />
       <About />
-      <Portfolio />
-      <Contact />
+      <Stats />
+      <Testimonials />
+      <CTABanner />
       <Footer />
+      <ScrollToTop />
     </main>
   )
 }
