@@ -1,20 +1,49 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useMemo } from "react"
 import { 
-  Globe, 
   Zap, 
   Brain, 
   Calendar, 
   Palette, 
-  Search,
   ArrowUpRight,
   Smartphone,
   BarChart3
 } from "lucide-react"
 import Link from "next/link"
-import { AnimatedGradientBorder } from "@/components/ui/background-effects"
+
+// Animated node that travels along grid lines
+function GridNode({ delay, duration, startX, startY, path }: { 
+  delay: number
+  duration: number
+  startX: number
+  startY: number
+  path: "horizontal" | "vertical" | "diagonal"
+}) {
+  const pathVariants = {
+    horizontal: { x: [startX, startX + 300, startX + 300, startX], y: [startY, startY, startY, startY] },
+    vertical: { x: [startX, startX, startX, startX], y: [startY, startY + 240, startY + 240, startY] },
+    diagonal: { x: [startX, startX + 180, startX + 180, startX], y: [startY, startY + 180, startY, startY] },
+  }
+
+  return (
+    <motion.div
+      className="absolute w-2 h-2 rounded-full bg-primary/60"
+      style={{ left: startX, top: startY }}
+      animate={pathVariants[path]}
+      transition={{
+        duration,
+        delay,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+    >
+      {/* Glow trail */}
+      <div className="absolute inset-0 rounded-full bg-primary/40 blur-sm scale-150" />
+    </motion.div>
+  )
+}
 
 const services = [
   {
@@ -128,9 +157,9 @@ export function Services() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-background to-background pointer-events-none" />
       
-      {/* Grid pattern */}
-      <div
-        className="absolute inset-0 opacity-5"
+      {/* Animated scrolling grid */}
+      <motion.div
+        className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage: `
             linear-gradient(to right, currentColor 1px, transparent 1px),
@@ -138,7 +167,25 @@ export function Services() {
           `,
           backgroundSize: "60px 60px",
         }}
+        animate={{
+          backgroundPosition: ["0px 0px", "60px 60px"],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "linear",
+        }}
       />
+
+      {/* Animated graph nodes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <GridNode delay={0} duration={8} startX={60} startY={120} path="horizontal" />
+        <GridNode delay={2} duration={10} startX={180} startY={240} path="vertical" />
+        <GridNode delay={1} duration={12} startX={300} startY={60} path="diagonal" />
+        <GridNode delay={3} duration={9} startX={420} startY={180} path="horizontal" />
+        <GridNode delay={4} duration={11} startX={540} startY={300} path="vertical" />
+        <GridNode delay={2.5} duration={10} startX={660} startY={120} path="diagonal" />
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section header */}
