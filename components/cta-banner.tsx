@@ -38,15 +38,23 @@ export function CTABanner() {
           className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-neon-purple/20 blur-3xl"
         />
 
-        {/* Grid overlay */}
-        <div
-          className="absolute inset-0 opacity-10"
+        {/* Animated scrolling grid */}
+        <motion.div
+          className="absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage: `
               linear-gradient(to right, currentColor 1px, transparent 1px),
               linear-gradient(to bottom, currentColor 1px, transparent 1px)
             `,
             backgroundSize: "60px 60px",
+          }}
+          animate={{
+            backgroundPosition: ["0px 0px", "60px 60px"],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "linear",
           }}
         />
       </div>
