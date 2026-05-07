@@ -102,7 +102,7 @@ export function Footer() {
               </a>
               <div className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary mt-1" />
-                <span>123 Healthcare Street<br />London, EC1A 1BB</span>
+                <span>Waterloo Street<br />London, EC1A 1BB</span>
               </div>
             </div>
 
